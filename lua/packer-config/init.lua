@@ -90,6 +90,10 @@ return require("packer").startup(function()
 	--> new features
 	use({ "jackMort/ChatGPT.nvim", commit = "2107f70" })
 	use({ "MunifTanjim/nui.nvim" })
+	use({ "simrat39/symbols-outline.nvim" })
+
+	--> custom plugin
+	use({ "/home/vinny/plugins/autorun.nvim" })
 
 	-- https://github.com/mfussenegger/nvim-ansible ansible
 end)

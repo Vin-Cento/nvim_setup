@@ -14,7 +14,7 @@ map("v", "K", "{", opts)
 -- map('n', '<CR>', '<cmd>FineCmdline<CR>', {noremap = true})
 
 map("n", "<leader>T", ":NvimTreeToggle<cr>", opts) --> toggle nvim tree
-map("n", "<leader>S", ":set spell!<cr>", opts) --> toggle spell
+-- map("n", "<leader>S", ":set spell!<cr>", opts) --> toggle spell
 
 --> Git Movement <--
 map("n", "<leader>gg", ":GitGutterBufferToggle<cr>", opts) --> toggle git gutter
@@ -25,12 +25,13 @@ map("n", "<leader>gs", ":Git add . | Git status<cr>", opts) --> toggle git gutte
 map("n", "<leader>gc", ":Git commit<cr>", opts) --> toggle git gutter
 
 map("n", "<leader>s", ":w<cr>", opts) --> write to file
-map("n", "<leader>R", ":runtime! %<cr>", opts) --> reload new file
+-- map("n", "<leader>R", ":runtime! %<cr>", opts) --> reload new file
+map("n", "<leader>x", ":source %<cr>", opts) --> reload new file
 -- map("n", "s", "<Plug>Sneak_s", opts) --> reload new file
 -- map("n", "S", "<Plug>Sneak_S", opts) --> reload new file
 
 --> telescope mappings <--
-map("n", "<leader>ff", ":Telescope find_files<cr>", opts)
+map("n", "<leader>ff", ":Telescope find_files find_command=rg,--ignore,--hidden,--files prompt_prefix=🔍<cr>", opts)
 map("n", "<leader>fg", ":Telescope live_grep<cr>", opts)
 map("n", "<leader>fb", ":Telescope buffers<cr>", opts)
 map("n", "<leader>fp", ":Telescope project<cr>", opts)
@@ -70,3 +71,6 @@ map("v", "<leader>zz", ":'<,'>TZNarrow<CR>", {})
 map("n", "<Leader>tk", "<cmd>:ChatGPT<cr>", opts)
 map("n", "<Leader>tj", "<cmd>:ChatGPTActAs<cr>", opts)
 map("n", "<Leader>tt", "<cmd>:ChatGPTEditWithInstructions<cr>", opts)
+map("n", "<Leader><Leader>", "<cmd>:w<cr>:lua require('autorun').run()<cr>", opts)
+
+map("n", "<Leader>S", "<cmd>:SymbolsOutline<cr>", opts)

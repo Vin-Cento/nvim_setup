@@ -50,3 +50,4 @@ require("dap-config")
 --> new feature
 require("chatgpt-config")
 require("auto-config")
+require("symbols-outline-config")
