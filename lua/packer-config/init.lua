@@ -88,7 +88,7 @@ return require("packer").startup(function()
 	use({ "nvim-telescope/telescope-dap.nvim" })
 
 	--> new features
-	use({ "jackMort/ChatGPT.nvim" })
+	use({ "jackMort/ChatGPT.nvim", commit = "2107f70" })
 	use({ "MunifTanjim/nui.nvim" })
 
 	-- https://github.com/mfussenegger/nvim-ansible ansible
