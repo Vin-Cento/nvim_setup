@@ -52,6 +52,13 @@ require("mason-lspconfig").setup_handlers({
 			capabilities = capabilities,
 			settings = {
 				Lua = {
+					workspace = {
+						library = {
+							"/usr/share/nvim/runtime/lua",
+							"/usr/share/nvim/runtime/lua/vim",
+							"/usr/share/nvim/runtime/lua/vim/lsp",
+						},
+					},
 					diagnostics = {
 						globals = { "vim", "use" },
 					},
