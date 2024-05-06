@@ -6,10 +6,15 @@ vim.g.maplocalleader = "," -- leader key
 
 --> key swap <--
 -- map("n", ";", ":", opts)
-map("n", "J", "}", opts)
-map("n", "K", "{", opts)
+map("n", "J", "}zz", opts)
+map("n", "K", "{zz", opts)
 map("v", "J", "}", opts)
 map("v", "K", "{", opts)
+
+map("n", "j", "jzz", opts)
+map("n", "k", "kzz", opts)
+map("n", "h", "hzz", opts)
+map("n", "l", "lzz", opts)
 
 -- map('n', '<CR>', '<cmd>FineCmdline<CR>', {noremap = true})
 
@@ -39,16 +44,6 @@ map("n", "gR", ":Telescope lsp_references<cr>", opts)
 map("n", "gD", ":Telescope lsp_definitions<cr>", opts)
 map("n", "<leader>fs", ":UltiSnipsEdit<CR>", opts)
 
---> barbar mappings <--
-map("n", "<leader>n", ":BufferPrevious<cr>", opts)
-map("n", "<leader>p", ":BufferNext<cr>", opts)
-map("n", "<leader>mn", ":BufferMovePrevious<cr>", opts)
-map("n", "<leader>mp", ":BufferMoveNext<cr>", opts)
-map("n", "<leader>bd", ":BufferClose<cr>", opts)
-map("n", "<leader>bon", ":BufferOrderByBufferNumber<cr>", opts)
-map("n", "<leader>bod", ":BufferOrderByDirectory<cr>", opts)
-map("n", "<leader>bol", ":BufferOrderByLanguage<cr>", opts)
-
 --> debugger <--
 map("n", "<leader>dr", ":lua require'dap'.continue()<CR>", opts)
 map("n", "<leader>dd", ":lua require'dap'.step_over()<CR>", opts)
@@ -74,3 +69,25 @@ map("n", "<Leader>tt", "<cmd>:ChatGPTEditWithInstructions<cr>", opts)
 map("n", "<Leader><Leader>", "<cmd>:w<cr>:lua require('autorun').run()<cr>", opts)
 
 map("n", "<Leader>S", "<cmd>:SymbolsOutline<cr>", opts)
+
+local harpoon = require("harpoon")
+
+-- REQUIRED
+harpoon:setup()
+-- REQUIRED
+
+vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end)
+vim.keymap.set("n", "<C-e>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
+
+vim.keymap.set("n", "<C-f>", function() harpoon:list():select(1) end)
+vim.keymap.set("n", "<C-d>", function() harpoon:list():select(2) end)
+vim.keymap.set("n", "<C-s>", function() harpoon:list():select(3) end)
+vim.keymap.set("n", "<C-a>", function() harpoon:list():select(4) end)
+
+-- Toggle previous & next buffers stored within Harpoon list
+vim.keymap.set("n", "<C-S-P>", function() harpoon:list():prev() end)
+vim.keymap.set("n", "<C-S-N>", function() harpoon:list():next() end)
+
+vim.api.nvim_set_keymap('i', '<C-h>', 'copilot#Accept("<CR>")', { expr=true, noremap = true, silent = true })
+vim.g.copilot_no_tab_map = true
+vim.g.copilot_enabled = false

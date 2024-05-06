@@ -1,14 +1,5 @@
 local lspkind = require("lspkind")
 
--- local tabnine = require("cmp_tabnine.config")
--- tabnine:setup({
--- 	max_lines = 1000,
--- 	max_num_results = 3,
--- 	sort = true,
--- 	run_on_every_keystroke = false,
--- 	snippet_placeholder = "..",
--- })
-
 local cmp = require("cmp")
 cmp.setup({
 	formatting = {
@@ -70,15 +61,14 @@ cmp.setup({
 	},
 	sources = cmp.config.sources({
 		{ name = "spell" },
-		-- { name = "cmp_tabnine", keyword_length = 5 },
-		{ name = "ultisnips" },
+		{ name = "luasnip" },
 		{ name = "nvim_lsp" },
 		{ name = "buffer", keyword_length = 2 },
 		{ name = "path", keyword_length = 3 },
 	}),
 	experimental = {
 		native_menu = false,
-		ghost_text = { true },
+		-- ghost_text = { true },
 	},
 })
 

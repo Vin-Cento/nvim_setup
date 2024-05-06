@@ -1,3 +1,6 @@
+require("ts_context_commentstring").setup({})
+vim.g.skip_ts_context_commentstring_module = true
+
 require("nvim-treesitter.configs").setup({
 	--> parsers <--
 	ensure_installed = {
@@ -7,9 +10,13 @@ require("nvim-treesitter.configs").setup({
 		"javascript",
 		"lua",
 		"typescript",
+		"html",
+		"python",
+		"go",
+		"vue",
 	},
 	sync_install = false,
-    --> highlight <--
+	--> highlight <--
 	highlight = {
 		enable = true,
 		additional_vim_regex_highlighting = false,
@@ -21,7 +28,7 @@ require("nvim-treesitter.configs").setup({
 			end
 		end,
 	},
-    --> indent <--
+	--> indent <--
 	indent = {
 		enable = true,
 	},

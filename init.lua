@@ -9,6 +9,7 @@ require("filetype_rules")
 --> Base
 require("lsp-config")
 require("null-ls-config")
+require("luasnip-config")
 require("ultisnip-config")
 require("nvim-tree-config")
 require("telescope-config")
@@ -19,7 +20,7 @@ require("treesitter-config")
 require("project-root-config")
 
 --> Looks
-require("barbar-config") --> tabs
+-- require("barbar-config") --> tabs
 require("lualine-config") --> statusline
 require("nightfox-config") --> theme
 -- require("gruvbox-theme-config") --> theme
@@ -36,6 +37,7 @@ require("autopairs-config") --> autopairs
 require("lastplace-config") --> checkpoint
 require("toggleterm-config") --> terminal
 require("comment-nvim-config") --> comment lines
+require("marks-config") --> comment lines
 
 --> Git
 require("github-config") --> github
@@ -49,5 +51,5 @@ require("dap-config")
 
 --> new feature
 require("chatgpt-config")
-require("auto-config")
+-- require("auto-config")
 require("symbols-outline-config")

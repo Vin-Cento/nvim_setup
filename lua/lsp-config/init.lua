@@ -21,11 +21,40 @@ local on_attach = function(client, bufnr)
 	map("n", "<leader>fm", ":lua vim.lsp.buf.format { async = true }<CR>", opts) --> formats the current buffer
 end
 
+-- You must make sure volar is setup
+-- e.g. require'lspconfig'.volar.setup{}
+-- See volar's section for more information
+
 require("mason-lspconfig").setup_handlers({
 	function(server_name) -- default handler (optional)
 		require("lspconfig")[server_name].setup({
 			on_attach = on_attach,
 			capabilities = capabilities,
+		})
+	end,
+	-- ["tsserver"] = function()
+	-- 	require("lspconfig").tsserver.setup({
+	-- 		init_options = {
+	-- 			plugins = {
+	-- 				{
+	-- 					name = "@vue/typescript-plugin",
+	-- 					location = "/usr/local/lib/node_modules/@vue/typescript-plugin",
+	-- 					languages = { "javascript", "typescript", "vue" },
+	-- 				},
+	-- 			},
+	-- 		},
+	-- 		filetypes = {
+	-- 			"javascript",
+	-- 			"typescript",
+	-- 			"vue",
+	-- 		},
+	-- 	})
+	-- end,
+	["sqls"] = function()
+		require("lspconfig").sqls.setup({
+			on_attach = function(client, bufnr)
+				require("sqls").on_attach(client, bufnr)
+			end,
 		})
 	end,
 	["yamlls"] = function()
@@ -39,13 +68,13 @@ require("mason-lspconfig").setup_handlers({
 			},
 		})
 	end,
-	["volar"] = function()
-		require("lspconfig").volar.setup({
-			on_attach = on_attach,
-			capabilities = capabilities,
-			filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
-		})
-	end,
+	-- ["volar"] = function()
+	-- 	require("lspconfig").volar.setup({
+	-- 		on_attach = on_attach,
+	-- 		capabilities = capabilities,
+	-- 		filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
+	-- 	})
+	-- end,
 	["lua_ls"] = function()
 		require("lspconfig").lua_ls.setup({
 			on_attach = on_attach,
@@ -64,6 +93,12 @@ require("mason-lspconfig").setup_handlers({
 					},
 				},
 			},
+		})
+	end,
+	["pyright"] = function()
+		require("lspconfig").pyright.setup({
+			on_attach = on_attach,
+			filetypes = { "python", "tac" },
 		})
 	end,
 	["ltex"] = function()
@@ -87,12 +122,6 @@ require("mason-lspconfig").setup_handlers({
 			},
 		})
 	end,
-	-- ["sqlls"] = function()
-	-- 	require("lspconfig").sqlls.setup({
-	-- 		on_attach = on_attach,
-	-- 		capabilities = capabilities,
-	-- 	})
-	-- end,
 	-- ["sqls"] = function()
 	-- 	require("lspconfig").sqls.setup({
 	--      cmd = {'sqls'},

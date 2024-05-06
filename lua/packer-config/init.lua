@@ -1,6 +1,12 @@
 return require("packer").startup(function()
 	--> BASE
 	use("SirVer/ultisnips") --> snippets
+	use({
+		"L3MON4D3/LuaSnip",
+		tag = "v2.*",
+		run = "make install_jsregexp",
+	})
+	use({ "saadparwaiz1/cmp_luasnip" })
 	use("hrsh7th/nvim-cmp") --> autocompletion
 	use("ldelossa/litee.nvim") --> package framework
 	use("onsails/lspkind-nvim") --> icons for lsp completion
@@ -10,7 +16,7 @@ return require("packer").startup(function()
 	use("williamboman/mason.nvim") --> diagnistocs, formattings, code actions package manager
 	use("kyazdani42/nvim-tree.lua") --> filetree
 	use("nvim-telescope/telescope.nvim") --> telescope fzf viewing
-	use("jose-elias-alvarez/null-ls.nvim") --> diagnistocs, formattings, code actions
+	use({ "nvimtools/none-ls.nvim", requires = { { "nvimtools/none-ls-extras.nvim" }, "gbprod/none-ls-shellcheck.nvim", } }) --> diagnistocs, formattings, code actions
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }) --> treesitter
 	-- use({ "klen/nvim-test" })
 
@@ -19,7 +25,7 @@ return require("packer").startup(function()
 	use("jay-babu/mason-null-ls.nvim") --> bridge mason and lsp
 
 	--> Looks
-	use("romgrk/barbar.nvim") --> tabs
+	-- use("romgrk/barbar.nvim") --> tabs
 	use("EdenEast/nightfox.nvim") --> theme
 	-- use("ellisonleao/gruvbox.nvim")
 	use("nvim-lualine/lualine.nvim") --> statusline
@@ -38,6 +44,11 @@ return require("packer").startup(function()
 
 	--> Quality of Life
 	use("phaazon/hop.nvim") --> sneak
+	use({
+		"ThePrimeagen/harpoon",
+		branch = "harpoon2",
+		requires = { { "nvim-lua/plenary.nvim" } },
+	})
 	use("tpope/vim-surround") --> surrounding
 	use("windwp/nvim-autopairs") --> autopairs
 	use("Pocco81/true-zen.nvim") --> focus view
@@ -53,6 +64,7 @@ return require("packer").startup(function()
 			{ "MunifTanjim/nui.nvim" },
 		},
 	})
+	use({ "chentoast/marks.nvim" })
 
 	--> Telescope
 	use("nvim-telescope/telescope-project.nvim") --> pull up projects
@@ -79,11 +91,12 @@ return require("packer").startup(function()
 	use("quangnguyen30192/cmp-nvim-ultisnips") --> ultisnips
 	use({ "tzachar/cmp-tabnine", run = "./install.sh" }) -->tabnine
 	use("mfussenegger/nvim-jdtls")
+	use("nanotee/sqls.nvim") -->  sqls
 
 	--> debugger
 	use({ "mfussenegger/nvim-dap" })
 	use({ "mfussenegger/nvim-dap-python" })
-	use({ "rcarriga/nvim-dap-ui" })
+	use({ "rcarriga/nvim-dap-ui", requires = { { "nvim-neotest/nvim-nio" } } })
 	use({ "theHamsta/nvim-dap-virtual-text" })
 	use({ "nvim-telescope/telescope-dap.nvim" })
 
@@ -93,7 +106,10 @@ return require("packer").startup(function()
 	use({ "simrat39/symbols-outline.nvim" })
 
 	--> custom plugin
-	use({ "/home/vinny/plugins/autorun.nvim" })
+	-- use({ "/home/vinny/plugins/autorun.nvim" })
+	use({ "github/copilot.vim" })
+
+	-- use({ "wakatime/vim-wakatime" })
 
 	-- https://github.com/mfussenegger/nvim-ansible ansible
 end)
