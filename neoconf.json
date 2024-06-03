@@ -1,0 +1,12 @@
+{
+  "lspconfig": {
+    "lua_ls": {
+      "Lua.workspace.library": [
+        "/usr/share/nvim/runtime/lua",
+        "/usr/share/nvim/runtime/lua/vim",
+        "/usr/share/nvim/runtime/lua/vim/lsp"
+      ],
+      "Lua.diagnostics.globals": ["vim","use"]
+    }
+  }
+}
