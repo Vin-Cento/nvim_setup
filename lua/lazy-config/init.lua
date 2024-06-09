@@ -61,4 +61,5 @@ require("lazy").setup({
   "folke/tokyonight.nvim",
   "nvim-lualine/lualine.nvim",
   "lewis6991/gitsigns.nvim",
+  "github/copilot.vim",
 })

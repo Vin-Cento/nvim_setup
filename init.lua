@@ -23,3 +23,4 @@ require("fine-cmdline-config")
 require("lualine-config")
 
 require("gitsigns-config")
+require("github-copilot-config")
