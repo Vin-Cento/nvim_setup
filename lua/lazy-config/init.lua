@@ -30,7 +30,6 @@ require("lazy").setup({
   "neovim/nvim-lspconfig",                                  --> configurate lsp client
   "williamboman/mason.nvim",                                --> diagnistocs, formattings, code actions package manager
   { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }, --> treesitter
-  "kyazdani42/nvim-tree.lua",                               --> filetree
   "williamboman/mason-lspconfig.nvim",                      --> bridge mason and lsp
   { "ThePrimeagen/harpoon",            branch = "harpoon2" },
   "ethanholz/nvim-lastplace",                               --> checkpoint
@@ -61,5 +60,7 @@ require("lazy").setup({
   "folke/tokyonight.nvim",
   "nvim-lualine/lualine.nvim",
   "lewis6991/gitsigns.nvim",
+  "nvim-tree/nvim-tree.lua",
   "github/copilot.vim",
+  "numToStr/FTerm.nvim",
 })

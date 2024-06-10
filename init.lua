@@ -23,6 +23,10 @@ require("fine-cmdline-config")
 require("lualine-config")
 
 require("gitsigns-config")
-require("github-copilot-config")
+
 require("nvim-tree-config")
+
+require("treesitter-config")
+
 require("copilot-config")
+require("FTerm-config")

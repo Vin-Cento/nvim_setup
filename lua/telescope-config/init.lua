@@ -40,6 +40,7 @@ vim.api.nvim_set_keymap("n", "<leader>ff",
 vim.api.nvim_set_keymap("n", "<leader>fg", ":Telescope live_grep<cr>", opts)
 vim.api.nvim_set_keymap("n", "<leader>fb", ":Telescope buffers<cr>", opts)
 vim.api.nvim_set_keymap("n", "<leader>fp", ":Telescope project<cr>", opts)
+vim.api.nvim_set_keymap("n", "<leader>fh", ":Telescope help_tags<cr>", opts)
 vim.api.nvim_set_keymap("n", "gR", ":Telescope lsp_references<cr>", opts)
 vim.api.nvim_set_keymap("n", "gD", ":Telescope lsp_definitions<cr>", opts)
 vim.api.nvim_set_keymap("n", "<leader>fs", ":UltiSnipsEdit<CR>", opts)
