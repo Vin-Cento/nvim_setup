@@ -63,4 +63,5 @@ require("lazy").setup({
   "nvim-tree/nvim-tree.lua",
   "github/copilot.vim",
   "numToStr/FTerm.nvim",
+  "numToStr/Comment.nvim",
 })

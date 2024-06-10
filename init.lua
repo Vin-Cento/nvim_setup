@@ -30,3 +30,4 @@ require("treesitter-config")
 
 require("copilot-config")
 require("FTerm-config")
+require("comment-config")
