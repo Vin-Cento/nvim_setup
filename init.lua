@@ -24,4 +24,5 @@ require("lualine-config")
 
 require("gitsigns-config")
 require("github-copilot-config")
+require("nvim-tree-config")
 require("copilot-config")
