@@ -8,7 +8,6 @@ require("telescope").setup({
 
   extensions = {
     media_files = {
-      -- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
       filetypes = { "png", "jpg", "mp4", "webm", "pdf" },
     },
     fzf = {
@@ -36,7 +35,7 @@ require("telescope").setup({
 
 local opts = { noremap = true, silent = true }
 vim.api.nvim_set_keymap("n", "<leader>ff",
-  ":Telescope find_files find_command=rg,--ignore,--hidden,--files prompt_prefix=🔍<cr>", opts)
+  ":Telescope find_files find_command=rg,--hidden,--files prompt_prefix=🔍<cr>", opts)
 vim.api.nvim_set_keymap("n", "<leader>fg", ":Telescope live_grep<cr>", opts)
 vim.api.nvim_set_keymap("n", "<leader>fb", ":Telescope buffers<cr>", opts)
 vim.api.nvim_set_keymap("n", "<leader>fp", ":Telescope project<cr>", opts)
