@@ -1,37 +1,37 @@
 --> Install
 require("lazy-config") --> install plugin
 
+
 --> Setting
 require("options")
 require("keymap-config")
 
 --> Base
 require("lsp-config")
-require("completion")
-
-require("harpoon-config")
-
-require("theme-config")
+require("completion-config")
+require("lazydev-config")
+require("treesitter-config")
 require("telescope-config")
+
+--> UI
+require("lualine-config")
+require("gitsigns-config")
+require("nvim-tree-config")
+require("fine-cmdline-config")
+require("FTerm-config")
+require("whichkey-config")
+require("indent-blankline-config")
+
+--> Action & Placement
+require("harpoon-config")
+require("comment-config")
 require("lastplace-config")
-
-require("chatgpt-config")
-
 require("surround-config")
 require("autopairs-config")
-require("fine-cmdline-config")
-require("lualine-config")
 
-require("gitsigns-config")
+--> Look
+require("theme-config")
 
-require("nvim-tree-config")
-
-require("treesitter-config")
-
+--> LLM
+require("chatgpt-config")
 require("copilot-config")
-require("FTerm-config")
-require("comment-config")
-
-require("whichkey-config")
-require("lazydev-config")
-require("indent-blankline-config")
