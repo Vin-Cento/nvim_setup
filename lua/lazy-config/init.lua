@@ -14,18 +14,12 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " " -- set this before lazy
 
 require("lazy").setup({
-  {
-    "folke/which-key.nvim",
-    event = "VeryLazy",
-    init = function()
-      vim.o.timeout = true
-      vim.o.timeoutlen = 300
-    end,
-  }
+  --> dependencies
+  "nvim-lua/plenary.nvim", --> library
+
   "folke/neoconf.nvim",
   "folke/neodev.nvim",
-  "nvim-lua/plenary.nvim", --> library
-  "hrsh7th/nvim-cmp",      --> autocomplete dropdown
+  "hrsh7th/nvim-cmp", --> autocomplete dropdown
 
   --> completion
   "f3fora/cmp-spell",                                       --> spell
@@ -71,4 +65,13 @@ require("lazy").setup({
   "github/copilot.vim",
   "numToStr/FTerm.nvim",
   "numToStr/Comment.nvim",
+  {
+    "folke/which-key.nvim",
+    event = "VeryLazy",
+    init = function()
+      vim.o.timeout = true
+      vim.o.timeoutlen = 300
+    end,
+  },
+  { "lukas-reineke/indent-blankline.nvim",      main = "ibl" }
 })

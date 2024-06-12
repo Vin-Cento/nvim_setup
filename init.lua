@@ -33,3 +33,5 @@ require("FTerm-config")
 require("comment-config")
 
 require("whichkey-config")
+require("lazydev-config")
+require("indent-blankline-config")
