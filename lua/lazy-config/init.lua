@@ -15,36 +15,70 @@ vim.g.mapleader = " " -- set this before lazy
 
 require("lazy").setup({
   --> dependencies
-  "nvim-lua/plenary.nvim", --> library
-
-  "folke/neoconf.nvim",
-  "folke/neodev.nvim",
-  "hrsh7th/nvim-cmp", --> autocomplete dropdown
-
-  --> completion
-  "f3fora/cmp-spell",                                       --> spell
-  "hrsh7th/cmp-path",                                       --> filepath
-  "hrsh7th/cmp-buffer",                                     --> buffer words
-  "hrsh7th/cmp-cmdline",                                    --> commandline
-  "hrsh7th/cmp-nvim-lsp",                                   --> lsp completion
-
-  "neovim/nvim-lspconfig",                                  --> configurate lsp client
-  "williamboman/mason.nvim",                                --> diagnistocs, formattings, code actions package manager
+  "nvim-lua/plenary.nvim",                                  --> library
   { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }, --> treesitter
-  "williamboman/mason-lspconfig.nvim",                      --> bridge mason and lsp
-  { "ThePrimeagen/harpoon",            branch = "harpoon2" },
-  "ethanholz/nvim-lastplace",                               --> checkpoint
-  "onsails/lspkind-nvim",
-  { "bluz71/vim-moonfly-colors",                name = "moonfly",                                                                                                                      lazy = false, priority = 1000 },
-  "nvim-telescope/telescope.nvim",               --> telescope fzf viewing
+  "nvim-telescope/telescope.nvim",                          --> telescope fzf viewing
+
+  "folke/neoconf.nvim",                                     --> language tool config
+
+  --> nvim development
+  { "Bilal2453/luvit-meta",            lazy = true },
+  { "folke/lazydev.nvim",              ft = "lua" },
+
+  --> completion interface
+  "hrsh7th/nvim-cmp",     --> autocomplete dropdown
+  --> completion engines
+  "f3for /cmp-spell",     --> spell
+  "hrsh7th/cmp-path",     --> filepath
+  "hrsh7th/cmp-buffer",   --> buffer words
+  "hrsh7th/cmp-cmdline",  --> commandline
+  "hrsh7th/cmp-nvim-lsp", --> lsp completion
+
+  --> lsp
+  "neovim/nvim-lspconfig",             --> lsp client
+  "williamboman/mason.nvim",           --> install for lsp tool
+  "williamboman/mason-lspconfig.nvim", --> bridge mason and lsp
+
+  --> ui
+  "VonHeikemen/fine-cmdline.nvim", --> better cmdline
+  "nvim-lualine/lualine.nvim",     --> status bar
+  "nvim-tree/nvim-tree.lua",       --> file tree
+  "numToStr/FTerm.nvim",           --> terminal
+  {
+    "folke/which-key.nvim",
+    event = "VeryLazy",
+    init = function()
+      vim.o.timeout = true
+      vim.o.timeoutlen = 300
+    end,
+  },
+
+  --> git
+  "lewis6991/gitsigns.nvim", --> git integration
+
+  --> look
+  { "bluz71/vim-moonfly-colors",           name = "moonfly", lazy = false, priority = 1000 }, --> theme
+  { "lukas-reineke/indent-blankline.nvim", main = "ibl" },                                    --> show indent
+  "onsails/lspkind-nvim",                                                                     --> cmp icon
+
+  --> better movement and positioning
+  { "ThePrimeagen/harpoon",                     branch = "harpoon2" }, --> fast file jumping
+  "ethanholz/nvim-lastplace",                                          --> checkpoint
+  "numToStr/Comment.nvim",                                             --> better comment
+  "kylechui/nvim-surround",                                            --> upgrade surround movement
+  "windwp/nvim-autopairs",                                             --> automatic pair
+
+  --> telescope
   { 'nvim-telescope/telescope-fzf-native.nvim', build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' },
   "nvim-telescope/telescope-project.nvim",       --> pull up projects
-  "p00f/nvim-ts-rainbow",                        --> better pairing color
   "nvim-treesitter/playground",                  --> toggle treesitter
   "nvim-treesitter/nvim-treesitter-refactor",    --> refactor variables
   "nvim-telescope/telescope-media-files.nvim",   --> show media
-  "JoosepAlviste/nvim-ts-context-commentstring", --> better comment
   "nvim-treesitter/nvim-treesitter-textobjects", --> better textobjects
+
+  "p00f/nvim-ts-rainbow",                        --> better pairing color
+
+  --> LLM
   {
     "jackMort/ChatGPT.nvim",
     event = "VeryLazy",
@@ -55,23 +89,5 @@ require("lazy").setup({
       "nvim-telescope/telescope.nvim"
     }
   },
-  "kylechui/nvim-surround",
-  "windwp/nvim-autopairs",
-  "VonHeikemen/fine-cmdline.nvim",
-  "folke/tokyonight.nvim",
-  "nvim-lualine/lualine.nvim",
-  "lewis6991/gitsigns.nvim",
-  "nvim-tree/nvim-tree.lua",
   "github/copilot.vim",
-  "numToStr/FTerm.nvim",
-  "numToStr/Comment.nvim",
-  {
-    "folke/which-key.nvim",
-    event = "VeryLazy",
-    init = function()
-      vim.o.timeout = true
-      vim.o.timeoutlen = 300
-    end,
-  },
-  { "lukas-reineke/indent-blankline.nvim",      main = "ibl" }
 })
