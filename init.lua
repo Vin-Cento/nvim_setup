@@ -21,6 +21,8 @@ require("fine-cmdline-config")
 require("FTerm-config")
 require("whichkey-config")
 require("indent-blankline-config")
+require("todo-comments-config")
+require("neoscroll-config")
 
 --> Action & Placement
 require("harpoon-config")
