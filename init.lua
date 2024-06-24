@@ -23,6 +23,7 @@ require("whichkey-config")
 require("indent-blankline-config")
 require("todo-comments-config")
 require("neoscroll-config")
+require("project-config")
 
 --> Action & Placement
 require("harpoon-config")

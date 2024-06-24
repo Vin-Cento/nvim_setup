@@ -26,9 +26,9 @@ require("lazy").setup({
   { "folke/lazydev.nvim",              ft = "lua" },
 
   --> completion interface
-  "hrsh7th/nvim-cmp",     --> autocomplete dropdown
+  "hrsh7th/nvim-cmp", --> autocomplete dropdown
   --> completion engines
-  "f3for /cmp-spell",     --> spell
+  -- "f3for/cmp-spell",     --> spell
   "hrsh7th/cmp-path",     --> filepath
   "hrsh7th/cmp-buffer",   --> buffer words
   "hrsh7th/cmp-cmdline",  --> commandline
@@ -54,6 +54,7 @@ require("lazy").setup({
   },
   "folke/todo-comments.nvim",
   "karb94/neoscroll.nvim",
+  "ahmedkhalf/project.nvim",
 
   --> git
   "lewis6991/gitsigns.nvim", --> git integration
@@ -71,7 +72,7 @@ require("lazy").setup({
   "windwp/nvim-autopairs",                                             --> automatic pair
 
   --> telescope
-  { 'nvim-telescope/telescope-fzf-native.nvim', build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' },
+  { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
   "nvim-telescope/telescope-project.nvim",       --> pull up projects
   "nvim-treesitter/playground",                  --> toggle treesitter
   "nvim-treesitter/nvim-treesitter-refactor",    --> refactor variables

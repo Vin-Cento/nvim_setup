@@ -23,7 +23,7 @@ require("telescope").setup({
       hidden_files = true,
       theme = "dropdown",
       base_dirs = {
-        { "~/dotfiles" },
+        -- { "~/dotfiles" },
         { "~/Code" },
         { "~/.config" },
       },
@@ -42,7 +42,7 @@ vim.api.nvim_set_keymap("n", "<leader>fp", ":Telescope project<cr>", opts)
 vim.api.nvim_set_keymap("n", "<leader>fh", ":Telescope help_tags<cr>", opts)
 vim.api.nvim_set_keymap("n", "gR", ":Telescope lsp_references<cr>", opts)
 vim.api.nvim_set_keymap("n", "gD", ":Telescope lsp_definitions<cr>", opts)
-vim.api.nvim_set_keymap("n", "<leader>fs", ":UltiSnipsEdit<CR>", opts)
+-- vim.api.nvim_set_keymap("n", "<leader>fs", ":UltiSnipsEdit<CR>", opts)
 
 require("telescope").load_extension("fzf")
 require("telescope").load_extension("project")
